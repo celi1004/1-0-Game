@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IOIOGame</string>
+    <string name="new_game">Start new game</string>
+    <string name="undo_last_move">Undo last move</string>
+    <string name="you_win">You Win!</string>
+    <string name="game_over">Game Over!</string>
+</resources>

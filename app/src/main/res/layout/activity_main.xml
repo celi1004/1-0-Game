@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/goback"
+            android:src="@drawable/ic_arrow_back_white_24dp"
+            android:layout_toLeftOf="@id/restart"
+            android:layout_alignTop="@id/restart"
+            android:padding="12dp"
+            android:background="#b88ced"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/restart"
+            android:src="@drawable/ic_cached_black_24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:background="#b88ced"
+            android:padding="12dp"/>
+
+        <LinearLayout
+            android:id="@+id/bestScore_layout"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/restart"
+            android:layout_alignRight="@id/restart"
+            android:layout_marginLeft="15dp"
+            android:background="#b88ced"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/bestScore_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Best Score"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/bestScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/bestScore_layout"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@id/bestScore_layout"
+            android:background="#b88ced"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/score_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Score"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="170dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher_title_last" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="90dp"
+        android:layout_gravity="center_horizontal">
+
+        <GameIOIO.game.GameView
+            android:id="@+id/gameview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/endgame_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/gameview"
+            android:layout_alignBottom="@id/gameview"
+            android:layout_alignLeft="@id/gameview"
+            android:layout_alignRight="@id/gameview"
+            android:text="@string/you_win"
+            android:background="#40cfb4f3"
+            android:textSize="38sp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</LinearLayout>
